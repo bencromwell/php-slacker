@@ -1,0 +1,16 @@
+{
+    "name": "cromwell/slacker",
+    "type": "library",
+    "description": "Slack notifier",
+    "keywords": ["slack"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slacker\\": "src/Slacker"
+        }
+    }
+}
