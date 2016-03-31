@@ -31,7 +31,7 @@ class SlackPoster
      */
     public function send(Payload $payload)
     {
-        $post = $this->client->post($this->uri, [RequestOptions::JSON => $payload]);
+        $post = $this->client->post($this->uri, [RequestOptions::JSON => $payload->jsonSerialize()]);
 
         return $post->getStatusCode();
     }

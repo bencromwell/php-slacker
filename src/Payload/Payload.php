@@ -19,12 +19,18 @@ class Payload implements \JsonSerializable
 
     public function jsonSerialize()
     {
-        return array(
+        $data = array(
             'username' => $this->username,
             'channel' => $this->channel,
             'text' => $this->text,
-            'attachments' => $this->attachments,
+            'attachments' => [],
         );
+
+        foreach ($this->attachments as $attachment) {
+            $data['attachments'][] = $attachment->jsonSerialize();
+        }
+
+        return $data;
     }
 
 }
