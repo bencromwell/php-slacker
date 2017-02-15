@@ -2,6 +2,22 @@
 
 namespace Slacker\Payload;
 
+/**
+ * @property string fallback    e.g. Required plain-text summary of the attachment
+ * @property string color       e.g. #36a64f
+ * @property string pretext     e.g. Optional text that appears above the attachment block
+ * @property string author_name e.g. Bobby Tables
+ * @property string author_link e.g. http://flickr.com/bobby/
+ * @property string author_icon e.g. http://flickr.com/icons/bobby.jpg
+ * @property string title       e.g. Slack API Documentation
+ * @property string title_link  e.g. https://api.slack.com/
+ * @property string text        e.g. Optional text that appears within the attachment
+ * @property string image_url   e.g. http://my-website.com/path/to/image.jpg
+ * @property string thumb_url   e.g. http://example.com/path/to/thumb.png
+ * @property string footer      e.g. Slack API
+ * @property string footer_icon e.g. https://platform.slack-edge.com/img/default_application_icon.png
+ * @property int    ts          e.g. timestamp 123456789
+ */
 class Attachment implements \JsonSerializable, \ArrayAccess
 {
 
