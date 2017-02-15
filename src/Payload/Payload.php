@@ -10,7 +10,7 @@ class Payload implements \JsonSerializable
     public $text;
 
     /** @var Attachment[] */
-    public $attachments = array();
+    public $attachments = [];
 
     public function addAttachment(Attachment $attachment)
     {
@@ -19,12 +19,12 @@ class Payload implements \JsonSerializable
 
     public function jsonSerialize()
     {
-        $data = array(
+        $data = [
             'username' => $this->username,
             'channel' => $this->channel,
             'text' => $this->text,
             'attachments' => [],
-        );
+        ];
 
         foreach ($this->attachments as $attachment) {
             $data['attachments'][] = $attachment->jsonSerialize();
