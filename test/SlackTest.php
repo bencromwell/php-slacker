@@ -44,15 +44,15 @@ class SlackTest extends TestCase
         $property->setAccessible(true);
         $this->assertNotEmpty($property->getValue($slack));
 
-        $slack->newMessage('Foobar!');
+        $slack->message('Foobar!');
 
         $property = new \ReflectionProperty($slack, 'channel');
         $property->setAccessible(true);
-        $this->assertNull($property->getValue($slack));
+        $this->assertEquals('foobar', $property->getValue($slack));
 
         $property = new \ReflectionProperty($slack, 'username');
         $property->setAccessible(true);
-        $this->assertNull($property->getValue($slack));
+        $this->assertEquals('slacker', $property->getValue($slack));
 
         $property = new \ReflectionProperty($slack, 'attachments');
         $property->setAccessible(true);
@@ -71,7 +71,7 @@ class SlackTest extends TestCase
         });
 
         $slack = new Slack('some_webhook', $guzzle);
-        $status = $slack->newMessage('Hello, World')->send();
+        $status = $slack->message('Hello, World')->send();
 
         $this->assertEquals(200, $status);
     }

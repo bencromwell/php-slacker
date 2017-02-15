@@ -27,6 +27,8 @@ $slacker->message('Hello!')->send();
 
 ```
 
+Calls to `channel` or `username` persist across uses, whereas calls to message reset the message and the attachment.
+
 
 ## Regular usage
 

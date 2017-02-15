@@ -32,7 +32,7 @@ class Slack
         $this->slackPoster = new SlackPoster($client, $webhook);
     }
 
-    public function newMessage(string $message): self
+    public function message(string $message): self
     {
         $this->clear();
 
@@ -88,8 +88,6 @@ class Slack
     private function clear()
     {
         $this->message = null;
-        $this->username = null;
-        $this->channel = null;
         $this->attachments = [];
     }
 }
