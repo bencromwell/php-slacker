@@ -1,7 +1,31 @@
 # php-slacker
 A quick Slack notifier for PHP
 
-## Example usage
+## Simplified usage
+```
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+// general setup
+$slacker = new \Slacker\Slack(
+    $config['webhook'],
+    new \GuzzleHttp\Client()
+);
+
+$slacker
+    ->channel('#general')
+    ->username('Slacker')
+    ->message('Hello, #general')
+    ->send();
+
+// Or simpler, using the defaults chosen for the webook within Slack:
+$slacker->message('Hello!')->send();
+
+```
+
+
+## Regular usage
 
 ```
 <?php
