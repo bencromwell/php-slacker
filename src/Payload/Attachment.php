@@ -20,7 +20,6 @@ namespace Slacker\Payload;
  */
 class Attachment implements \JsonSerializable, \ArrayAccess
 {
-
     public $data = [];
 
     /** @var Field[] */
@@ -97,5 +96,4 @@ class Attachment implements \JsonSerializable, \ArrayAccess
 
         return $data;
     }
-
 }

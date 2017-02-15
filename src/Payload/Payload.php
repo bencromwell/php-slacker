@@ -4,7 +4,6 @@ namespace Slacker\Payload;
 
 class Payload implements \JsonSerializable
 {
-
     public $username;
     public $channel;
     public $text;
@@ -32,5 +31,4 @@ class Payload implements \JsonSerializable
 
         return $data;
     }
-
 }

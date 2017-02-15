@@ -8,7 +8,6 @@ use Slacker\Payload\Payload;
 
 class SlackPoster
 {
-
     /** @var Client */
     private $client;
 
@@ -35,5 +34,4 @@ class SlackPoster
 
         return $post->getStatusCode();
     }
-
 }

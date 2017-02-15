@@ -23,8 +23,12 @@ class Slack
     /** @var Attachment */
     private $attachments = [];
 
-    public function __construct(string $webhook, Client $client)
+    public function __construct(string $webhook, Client $client = null)
     {
+        if (is_null($client)) {
+            $client = new Client();
+        }
+
         $this->slackPoster = new SlackPoster($client, $webhook);
     }
 

@@ -7,11 +7,14 @@ A quick Slack notifier for PHP
 
 require __DIR__ . '/vendor/autoload.php';
 
-// general setup
+// setup with a configured Guzzle client
 $slacker = new \Slacker\Slack(
     $config['webhook'],
     new \GuzzleHttp\Client()
 );
+
+// or with a default Guzzle client you need not pass it in
+$slacker = new \Slacker\Slack($config['webhook']);
 
 $slacker
     ->channel('#general')

@@ -4,7 +4,6 @@ namespace Slacker\Payload;
 
 class Field implements \JsonSerializable
 {
-
     public $title;
     public $value;
     public $short;
@@ -17,5 +16,4 @@ class Field implements \JsonSerializable
             'short' => $this->short,
         );
     }
-
 }
