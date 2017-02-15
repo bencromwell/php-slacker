@@ -26,6 +26,17 @@ class Attachment implements \JsonSerializable, \ArrayAccess
     /** @var Field[] */
     public $fields = [];
 
+    public static function fromArray(array $parameters)
+    {
+        $attachment = new self;
+
+        foreach ($parameters as $k => $v) {
+            $attachment->offsetSet($k, $v);
+        }
+
+        return $attachment;
+    }
+
     public function offsetExists($offset)
     {
         return isset($this->data[$offset]);
